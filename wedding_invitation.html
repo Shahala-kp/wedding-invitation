@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8e203d">
+  <title>Gayathri & Abhiram | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+ <!--   CSS File -->
+ <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- HERO / WEDDING COVER -->
+  <header class="hero" id="home">
+    <div class="hero-card">
+      <div class="eyebrow">Together with our families</div>
+      <div class="ornament">❦</div>
+      <p class="intro">
+        With hearts full of love and gratitude,
+        we invite you to grace the wedding of our daughter
+      </p>
+      <!-- Keep couple.jpeg in the same folder as this HTML file -->
+      <div class="couple-photo-wrap">
+        <img src="couple.jpeg" alt="Gayathri and Abhiram" class="couple-photo">
+      </div>
+      <div class="names">
+        <span id="brideHero">GAYATRI</span>
+        <span class="ampersand">&</span>
+        <span id="groomHero">ABHIRAM</span>
+      </div>
+      <div class="ornament">✧ ❦ ✧</div>
+      
+
+<!-- THREE CIRCULAR SCRATCH CARDS -->
+<div class="scratch-section">
+  <p class="scratch-heading">A special day awaits...</p>
+  <div class="scratch-circles">
+    <div class="scratch-card" data-number="25">
+      <div class="date-reveal">
+        <span class="date-number">25</span>
+      </div>
+      <canvas class="scratchCanvas"></canvas>
+      <div class="scratch-instruction">SCRATCH</div>
+    </div>
+
+    <div class="scratch-card" data-number="12">
+      <div class="date-reveal">
+        <span class="date-number">12</span>
+      </div>
+      <canvas class="scratchCanvas"></canvas>
+      <div class="scratch-instruction">SCRATCH</div>
+    </div>
+
+    <div class="scratch-card" data-number="26">
+      <div class="date-reveal">
+        <span class="date-number">26</span>
+      </div>
+      <canvas class="scratchCanvas"></canvas>
+      <div class="scratch-instruction">SCRATCH </div>
+    </div>
+
+  </div>
+
+  <p class="scratch-hint" id="scratchHint">
+    ✨ Scratch all 3 circles to reveal the date ✨
+  </p>
+</div>
+
+<!-- CELEBRATION POPUP -->
+<div class="celebration-overlay" id="celebrationOverlay">
+  <div class="celebration-box">
+    <button class="celebration-close" id="closeCelebration"
+      aria-label="Close">×</button>
+
+    <div class="celebration-emoji">💍🥂💖</div>
+    <p class="celebration-small">SAVE THE SPECIAL DATE</p>
+    <h2>25 · 12 · 26</h2>
+    <p>Gayathri &amp; Abhiram</p>
+    <p class="celebration-message">
+      A beautiful beginning. A lifetime of love. ✨
+    </p>
+    <button class="celebration-button" id="celebrationOkay">
+      Yay! 🎉
+    </button>
+  </div>
+</div>
+
+<div id="confettiContainer" aria-hidden="true"></div>
+
+
+     
+      <!-- <p class="hero-location">
+        Gireesh Kaattil · Thikkodi, Kozhikode
+      </p> -->
+      <a class="button" href="#programme">Discover the Details ↓</a>
+    </div>
+  </header>
+  <main>
+
+    <!-- INTRODUCTION -->
+    <section class="section" id="story">
+      <div class="section-inner">
+        <div class="section-kicker">A beautiful beginning</div>
+        <h2>Two Hearts, One Journey</h2>
+        <p class="lead">
+          Some moments become memories, and some people become home.
+          We would be honoured to have you with us as Gayathri and
+          Abhiram begin their new chapter, filled with love,
+          happiness, and countless blessings.
+        </p>
+        <div class="ornament">❦</div>
+      </div>
+    </section>
+
+
+
+<!-- WEDDING PROGRAMME -->
+<section class="section programme" id="programme">
+  <div class="section-inner">
+
+    <div class="section-kicker">The celebrations begin</div>
+    <h2>Wedding Programme</h2>
+
+    <p class="lead">
+      A few beautiful days filled with love, laughter,
+      traditions, and unforgettable memories.
+    </p>
+
+    <div class="programme-list">
+
+      <article class="programme-item">
+        <div class="programme-date">
+          <span>22</span>
+          <small>DEC · 2026</small>
+        </div>
+        <div class="programme-content">
+          <span class="programme-icon">❀</span>
+          <h3>Mehendi</h3>
+          <p>A beautiful beginning to the wedding celebrations.</p>
+        </div>
+      </article>
+
+      <article class="programme-item">
+        <div class="programme-date">
+          <span>23</span>
+          <small>DEC · 2026</small>
+        </div>
+        <div class="programme-content">
+          <span class="programme-icon">✿</span>
+          <h3>Haldi</h3>
+          <p>A day of tradition, happiness, and golden moments.</p>
+        </div>
+      </article>
+
+      <article class="programme-item">
+        <div class="programme-date">
+          <span>24</span>
+          <small>DEC · 2026</small>
+        </div>
+        <div class="programme-content">
+          <span class="programme-icon">♡</span>
+          <h3>Pre-Wedding Reception</h3>
+          <p>An evening of togetherness, smiles, and celebration.</p>
+        </div>
+      </article>
+      <article class="programme-item programme-wedding">
+        <div class="programme-date">
+          <span>25</span>
+          <small>DEC · 2026</small>
+        </div>
+        <div class="programme-content">
+          <span class="programme-icon">💍</span>
+          <h3>The Wedding</h3>
+          <!-- <p>Gayathri &amp; Abhiram</p> -->
+          <p class="programme-time">Muhurtham · 12:15 PM – 1:10 PM</p>
+        </div>
+      </article>
+    </div>
+    <a class="button" href="#details">Discover the Details ↓</a>
+
+  </div>
+</section>
+
+
+    <!-- WEDDING DETAILS -->
+    <section class="section details" id="details">
+      <div class="section-inner">
+        <div class="section-kicker">Save the date</div>
+        <h2>The Wedding Celebration</h2>
+        <p class="lead">
+          Please join us for a day made even more special
+          by the people we love.
+        </p>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <div class="detail-icon">♡</div>
+            <h3>The Bride</h3>
+            <p><strong>Gayathri Gireesh K</strong></p>
+            <p>Daughter of Mr. Gireesan K &amp; Mrs. Sindhu Gireesh</p>
+          </article>
+          <article class="detail-card">
+            <div class="detail-icon">✧</div>
+            <h3>Date &amp; Muhurtham</h3>
+            <p><strong>Friday, 25th December 2026</strong></p>
+            <p>12:15 PM – 1:10 PM</p>
+          </article>
+          <article class="detail-card">
+            <div class="detail-icon">♡</div>
+            <h3>The Groom</h3>
+            <p><strong>Abhiram S Anand</strong></p>
+            <p>Son of Mr. Sadanandan &amp; Mrs. Smitha Anand</p>
+          </article>
+        </div>
+
+        <!-- LIVE COUNTDOWN -->
+        <div class="countdown" aria-label="Countdown to the wedding">
+
+          <div class="time-unit">
+            <strong id="days">--</strong>
+            <span>Days</span>
+          </div>
+
+          <div class="time-unit">
+            <strong id="hours">--</strong>
+            <span>Hours</span>
+          </div>
+
+          <div class="time-unit">
+            <strong id="minutes">--</strong>
+            <span>Minutes</span>
+          </div>
+
+          <div class="time-unit">
+            <strong id="seconds">--</strong>
+            <span>Seconds</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section location" id="location">
+      <div class="section-inner">
+
+        <div class="section-kicker">Find your way</div>
+
+        <h2>Where the celebration happens</h2>
+
+        <p class="lead">
+          Your presence and blessings are the most precious gifts.
+          We look forward to welcoming you.
+        </p>
+
+        <div class="venue-box">
+          <div class="detail-icon">⌖</div>
+          <h3>Bride’s Home</h3>
+          <h3>Kanarasadanam Kattil (Ho),</h3>
+          <p>Thikkodi, Kozhikode, Kerala, India</p>
+          <a
+            class="button" id="mapLink"
+            href="https://www.google.com/maps?q=11.4979288,75.6194004" target="_blank"
+            rel="noopener noreferrer">
+            Open Location in Google Maps ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GOOGLE CALENDAR -->
+    <section class="section rsvp" id="calendar">
+      <div class="section-inner">
+
+        <div class="section-kicker">Remember our special day</div>
+
+        <h2>Celebrate with us</h2>
+
+        <p class="lead">
+          Save the wedding date to your Google Calendar
+          so you can be part of our special moment.
+        </p>
+
+        <a
+          class="button"
+          id="calendarButton"
+          href="#calendar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📅 Mark Your Calendar
+        </a>
+
+        <p style="font-size: .78rem; margin-top: 18px;">
+          Gayathri &amp; Abhiram · 25 December 2026
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>With blessings from family and friends <span class="footer-heart">♥</span> </footer>
+
+
+
+
+  <script>
+    // ======================================
+    // WEDDING DETAILS
+    // ======================================
+
+    const wedding = {
+      bride: "Gayathri Gireesh K",
+      groom: "Abhiram S Anand",
+
+      // Wedding date and time in India
+      dateISO: "2026-12-25T12:15:00+05:30",
+      endISO: "2026-12-25T13:10:00+05:30",
+
+      dateText: "Friday, 25 December 2026",
+      timeText: "12:15 PM - 1:10 PM IST",
+
+      venue: "Gireesh Kaattil",
+      address: "Thikkodi, Kozhikode, Kerala, India",
+
+      // Exact coordinates from your supplied Google Maps link
+      mapURL:
+        "https://www.google.com/maps?q=11.4979288,75.6194004"
+    };
+
+
+    // ======================================
+    // GOOGLE CALENDAR LINK
+    // ======================================
+
+    function setupCalendarButton() {
+      const start = new Date(wedding.dateISO);
+      const end = new Date(wedding.endISO);
+
+      // Google Calendar template uses UTC date values
+      function toGoogleDate(date) {
+        return date.toISOString()
+          .replace(/[-:]/g, "")
+          .replace(/\.\d{3}/, "");
+      }
+
+      const calendarURL = new URL(
+        "https://calendar.google.com/calendar/render"
+      );
+
+      calendarURL.search = new URLSearchParams({
+        action: "TEMPLATE",
+        text: "Gayathri & Abhiram Wedding",
+        dates: `${toGoogleDate(start)}/${toGoogleDate(end)}`,
+        ctz: "Asia/Kolkata",
+        details:
+          "Wedding of Gayathri & Abhiram.\n" +
+          "Muhurtham: 12:15 PM - 1:10 PM IST.\n" +
+          "Please join us in celebrating our happily ever after",
+        location: `${wedding.venue}, ${wedding.address}`
+      }).toString();
+
+      const calendarButton =
+        document.getElementById("calendarButton");
+
+      calendarButton.href = calendarURL.toString();
+      calendarButton.target = "_blank";
+      calendarButton.rel = "noopener noreferrer";
+    }
+
+
+    // ======================================
+    // GOOGLE MAPS LINK
+    // ======================================
+
+    function setupMapButton() {
+      document.getElementById("mapLink").href =
+        wedding.mapURL;
+    }
+
+
+    // ======================================
+    // LIVE WEDDING COUNTDOWN
+    // ======================================
+
+    function updateCountdown() {
+      const target = new Date(wedding.dateISO).getTime();
+      const now = Date.now();
+      const difference = target - now;
+
+      if (difference <= 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => {
+          document.getElementById(id).textContent = "0";
+        });
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+      document.getElementById("hours").textContent =
+        Math.floor((difference / (1000 * 60 * 60)) % 24);
+
+      document.getElementById("minutes").textContent =
+        Math.floor((difference / (1000 * 60)) % 60);
+
+      document.getElementById("seconds").textContent =
+        Math.floor((difference / 1000) % 60);
+    }
+
+    // ======================================
+    // INITIALIZE WEBSITE
+    // ======================================
+
+    setupCalendarButton();
+    setupMapButton();
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+
+  <script>
+
+/* THREE SCRATCH CARDS */
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = [...document.querySelectorAll(".scratch-circles .scratch-card")];
+  const popup = document.getElementById("celebrationOverlay");
+  const hint = document.getElementById("scratchHint");
+  const confettiContainer = document.getElementById("confettiContainer");
+  const closeButton = document.getElementById("closeCelebration");
+  const okayButton = document.getElementById("celebrationOkay");
+
+  if (!cards.length || !popup || !confettiContainer) {
+    console.error("Scratch cards or celebration elements are missing.");
+    return;
+  }
+
+  let partyStarted = false;
+
+  cards.forEach((card) => {
+    const canvas = card.querySelector(".scratchCanvas");
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+    let scratching = false;
+
+    function drawCover() {
+      const size = card.clientWidth;
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = Math.round(size * dpr);
+      canvas.height = Math.round(size * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const gold = ctx.createLinearGradient(0, 0, size, size);
+      gold.addColorStop(0, "#bd9254");
+      gold.addColorStop(0.5, "#fff0cf");
+      gold.addColorStop(1, "#d8b879");
+
+      ctx.globalCompositeOperation = "source-over";
+      ctx.fillStyle = gold;
+      ctx.fillRect(0, 0, size, size);
+
+      // Decorative lines on the scratch coating
+      ctx.strokeStyle = "rgba(142, 32, 61, 0.18)";
+      ctx.lineWidth = 1;
+
+      for (let i = -size; i < size * 2; i += 12) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i + size, size);
+        ctx.stroke();
+      }
+
+      ctx.globalCompositeOperation = "destination-out";
+    }
+
+    function scratch(event) {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(x, y, 14, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function checkScratched() {
+      if (card.classList.contains("scratched")) return;
+
+      const width = canvas.width;
+      const height = canvas.height;
+      const pixels = ctx.getImageData(0, 0, width, height).data;
+      const step = 8;
+      let transparent = 0;
+      let total = 0;
+
+      for (let y = 0; y < height; y += step) {
+        for (let x = 0; x < width; x += step) {
+          if (pixels[(y * width + x) * 4 + 3] < 80) {
+            transparent++;
+          }
+          total++;
+        }
+      }
+
+      // Reveal the number after enough of the coating is scratched away
+      if (total > 0 && transparent / total >= 0.35) {
+        card.classList.add("scratched");
+        checkAllCards();
+      }
+    }
+
+    canvas.addEventListener("pointerdown", (event) => {
+      if (card.classList.contains("scratched")) return;
+
+      scratching = true;
+      canvas.setPointerCapture?.(event.pointerId);
+      scratch(event);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!scratching || card.classList.contains("scratched")) return;
+
+      scratch(event);
+      event.preventDefault();
+    });
+
+    canvas.addEventListener("pointerup", () => {
+      scratching = false;
+      checkScratched();
+    });
+
+    canvas.addEventListener("pointercancel", () => {
+      scratching = false;
+    });
+
+    drawCover();
+  });
+
+  function checkAllCards() {
+    const allDone = cards.every((card) =>
+      card.classList.contains("scratched")
+    );
+
+    if (allDone && !partyStarted) {
+      partyStarted = true;
+
+      // if (hint) {
+      //   hint.textContent = "💖 25 · 12 · 26 — The big day!";
+      // }
+
+      launchParty();
+    }
+  }
+
+  function launchParty() {
+    popup.classList.add("show");
+
+    const colors = ["#8e203d", "#d8b879", "#e9a0b2", "#fff0f3", "#ffffff"];
+
+    for (let i = 0; i < 140; i++) {
+      const piece = document.createElement("span");
+      piece.className = "confetti-piece";
+      piece.style.left = Math.random() * 100 + "vw";
+      piece.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+
+      piece.style.setProperty(
+        "--drift",
+        `${Math.random() * 260 - 130}px`
+      );
+
+      piece.style.setProperty(
+        "--fall-duration",
+        `${2 + Math.random() * 3}s`
+      );
+
+      piece.style.animationDelay = `${Math.random() * 0.6}s`;
+      confettiContainer.appendChild(piece);
+
+      setTimeout(() => piece.remove(), 6000);
+    }
+  }
+
+  function closeParty() {
+    popup.classList.remove("show");
+  }
+
+  closeButton?.addEventListener("click", closeParty);
+  okayButton?.addEventListener("click", closeParty);
+
+  popup.addEventListener("click", (event) => {
+    if (event.target === popup) closeParty();
+  });
+});
+  </script>
+
+
+</body>
+</html>
