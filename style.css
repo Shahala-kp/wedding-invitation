@@ -1,917 +1,721 @@
-    :root {
-      --wine: #8e203d;
-      --berry: #b83258;
-      --rose: #e9a0b2;
-      --blush: #fff0f3;
-      --cream: #fffaf7;
-      --ink: #512331;
-      --muted: #8a6670;
-      --gold: #c79a62;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .hero {
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      padding: 45px 22px;
-      background:
-        radial-gradient(ellipse at 10% 10%, rgba(255,255,255,.7), transparent 32%),
-        radial-gradient(ellipse at 90% 85%, rgba(255,220,229,.65), transparent 34%),
-        linear-gradient(135deg, #fff4f5, #f8dce4 48%, #f4c6d3);
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "✿";
-      position: absolute;
-      color: rgba(142,32,61,.13);
-      font-size: clamp(150px, 28vw, 360px);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .hero::before {
-      top: -55px;
-      left: -35px;
-      transform: rotate(-22deg);
-    }
-
-    .hero::after {
-      bottom: -100px;
-      right: -25px;
-      transform: rotate(28deg);
-    }
-
-    .hero-card {
-      position: relative;
-      z-index: 1;
-      width: min(760px, 100%);
-      padding: clamp(30px, 7vw, 76px) clamp(20px, 6vw, 66px);
-      border: 1px solid rgba(142,32,61,.35);
-      outline: 1px solid rgba(142,32,61,.2);
-      outline-offset: 8px;
-      background: rgba(255,250,247,.82);
-      box-shadow: 0 25px 80px rgba(111,30,56,.12);
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .25em;
-      font-size: .72rem;
-      color: var(--berry);
-      font-weight: 600;
-    }
-
-    .ornament {
-      color: var(--gold);
-      font-size: 1.5rem;
-      margin: 12px 0;
-    }
-
-    h1, h2, h3, .names {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-    }
-
-    .intro {
-      margin: 20px auto;
-      max-width: 470px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    /* Bride and groom photo */
-    .couple-photo-wrap {
-      width: clamp(160px, 35vw, 230px);
-      aspect-ratio: 1 / 1;
-      margin: 0 auto 25px;
-      padding: 6px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      background: white;
-      box-shadow: 0 8px 25px rgba(142,32,61,.15);
-    }
-
-    .couple-photo {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 50%;
-      border: 3px solid var(--blush);
-    }
-
-    .names {
-      margin: 12px 0;
-      font-size: clamp(3rem, 9vw, 5.7rem);
-      line-height: .95;
-      color: var(--wine);
-      overflow-wrap: anywhere;
-    }
-
-    .names > span:not(.ampersand) {
-      display: block;
-    }
-
-    .ampersand {
-      display: block;
-      color: var(--rose);
-      font-size: .6em;
-      margin: 12px 0;
-      font-style: italic;
-    }
-
-    .hero-date {
-      margin-top: 25px;
-      letter-spacing: .12em;
-      color: var(--wine);
-      font-size: .88rem;
-      font-weight: 500;
-    }
-
-    .hero-location {
-      margin: 5px 0 0;
-      font-size: .8rem;
-      color: var(--muted);
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 22px;
-      border: 0;
-      border-radius: 999px;
-      padding: 13px 25px;
-      background: var(--wine);
-      color: white;
-      text-decoration: none;
-      font: 500 .82rem 'Poppins', sans-serif;
-      letter-spacing: .03em;
-      cursor: pointer;
-      transition: transform .2s, background .2s;
-    }
-
-    .button:hover {
-      background: var(--berry);
-      transform: translateY(-2px);
-    }
-
-    .section {
-      padding: 75px 20px;
-    }
-
-    .section-inner {
-      width: min(980px, 100%);
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .section-kicker {
-      color: var(--berry);
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      font-size: .7rem;
-      font-weight: 600;
-    }
-
-    h2 {
-      margin: 8px 0 16px;
-      color: var(--wine);
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      line-height: 1.1;
-    }
-
-    .lead {
-      max-width: 650px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: .94rem;
-    }
-
-    .details {
-      background: var(--blush);
-    }
-
-    .detail-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 40px;
-    }
-
-    .detail-card {
-      padding: 28px 18px;
-      background: rgba(255,255,255,.8);
-      border: 1px solid #f1d2db;
-      border-radius: 6px;
-    }
-
-    .detail-icon {
-      font-size: 1.6rem;
-      color: var(--berry);
-    }
-
-    .detail-card h3 {
-      color: var(--wine);
-      font-size: 1.7rem;
-      margin: 10px 0 7px;
-    }
-
-    .detail-card p {
-      color: var(--muted);
-      margin: 4px 0;
-      font-size: .84rem;
-      overflow-wrap: anywhere;
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: clamp(12px, 4vw, 34px);
-      margin: 35px auto 0;
-    }
-
-    .time-unit {
-      min-width: 55px;
-    }
-
-    .time-unit strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      color: var(--wine);
-      line-height: 1.1;
-    }
-
-    .time-unit span {
-      color: var(--muted);
-      font-size: .68rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .location {
-      background: linear-gradient(135deg, var(--cream), var(--blush));
-    }
-
-    .venue-box {
-      max-width: 700px;
-      margin: 32px auto 0;
-      padding: 32px 20px;
-      border-top: 1px solid #e8bdca;
-      border-bottom: 1px solid #e8bdca;
-    }
-
-    .venue-box h3 {
-      font-size: 2rem;
-      margin: 0 0 6px;
-      color: var(--wine);
-    }
-
-    .venue-box p {
-      color: var(--muted);
-      margin: 5px 0;
-    }
-
-    .rsvp {
-      background: var(--wine);
-      color: #fff4f6;
-    }
-
-    .rsvp h2 {
-      color: #fff4f6;
-    }
-
-    .rsvp .section-kicker {
-      color: #f4c2d0;
-    }
-
-    .rsvp .lead {
-      color: #f3d9e0;
-    }
-
-    .rsvp .button {
-      background: #fff4f6;
-      color: var(--wine);
-    }
-
-    .rsvp .button:hover {
-      background: white;
-    }
-
-    footer {
-      padding: 25px 15px;
-      text-align: center;
-      color: var(--muted);
-      font-size: .8rem;
-      background: var(--cream);
-    }
-
-    .footer-heart {
-      color: var(--berry);
-    }
-
-    @media (max-width: 700px) {
-      .detail-grid {
-        grid-template-columns: 1fr;
-        max-width: 430px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .section {
-        padding: 60px 18px;
-      }
-
-      .hero-card {
-        outline-offset: 5px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition: none !important;
-      }
-    }
-
-.names #brideHero , .names #groomHero{
-  font-size: 45px !important;
+:root {
+  --wine: #8e203d;
+  --berry: #b83258;
+  --rose: #e9a0b2;
+  --blush: #fff0f3;
+  --cream: #fffaf7;
+  --ink: #512331;
+  --muted: #8a6670;
+  --gold: #c79a62;
 }
 
-/* ==============================
-   WEDDING PROGRAMME
-============================== */
-
-.programme {
-  background:
-    radial-gradient(ellipse at top left, #fff0f3, transparent 55%),
-    #fffaf7;
+* {
+  box-sizing: border-box;
 }
-
-.programme-list {
-  position: relative;
-  width: min(680px, 100%);
-  margin: 42px auto 0;
-  text-align: left;
-}
-
-.programme-list::before {
-  content: "";
-  position: absolute;
-  left: 64px;
-  top: 30px;
-  bottom: 30px;
-  width: 1px;
-  background: #e5b6c3;
-}
-
-.programme-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  gap: 22px;
-  align-items: stretch;
-  margin-bottom: 20px;
-}
-
-.programme-date {
-  position: relative;
-  z-index: 1;
-  align-self: start;
-  width: 130px;
-  min-height: 100px;
-  padding: 14px 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #e7c1cb;
-  border-radius: 6px;
-  background: #fff5f7;
-  color: #8e203d;
-}
-
-.programme-date span {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.7rem;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.programme-date small {
-  margin-top: 8px;
-  font-family: "Poppins", sans-serif;
-  font-size: .63rem;
-  letter-spacing: .1em;
-}
-
-.programme-content {
-  padding: 17px 20px;
-  border: 1px solid #f0dce1;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, .85);
-  box-shadow: 0 8px 22px rgba(142, 32, 61, .05);
-}
-
-.programme-icon {
-  color: #b83258;
-  font-size: 1.25rem;
-}
-
-.programme-content h3 {
-  margin: 3px 0 6px;
-  color: #8e203d;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  line-height: 1.15;
-}
-
-.programme-content p {
-  margin: 0;
-  color: #8a6670;
-  font-size: .82rem;
-}
-
-.programme-content .programme-time {
-  margin-top: 9px;
-  color: #8e203d;
-  font-weight: 600;
-}
-
-.programme-wedding .programme-date {
-  background: #8e203d;
-  color: #fff;
-  border-color: #8e203d;
-}
-
-.programme-wedding .programme-content {
-  background: #fff0f3;
-  border-color: #dba3b3;
-}
-
-@media (max-width: 520px) {
-  .programme-list::before {
-    left: 47px;
-  }
-
-  .programme-item {
-    grid-template-columns: 94px minmax(0, 1fr);
-    gap: 12px;
-  }
-
-  .programme-date {
-    width: 94px;
-    min-height: 88px;
-    padding: 10px 5px;
-  }
-
-  .programme-date span {
-    font-size: 2.2rem;
-  }
-
-  .programme-date small {
-    font-size: .52rem;
-    letter-spacing: .04em;
-  }
-
-  .programme-content {
-    padding: 14px 12px;
-  }
-
-  .programme-content h3 {
-    font-size: 1.5rem;
-  }
-
-  .programme-content p {
-    font-size: .76rem;
-  }
-}
-
-/* ==========================================
-   RESPONSIVE FIX — IPHONE, MOBILE & TABLETS
-   Add this at the VERY END of style.css
-========================================== */
 
 html {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
-  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
 }
 
-img,
-canvas {
-  max-width: 100%;
-}
-
-button,
 a {
-  -webkit-tap-highlight-color: transparent;
+  color: inherit;
 }
 
-/* Keep the hero content inside the screen */
 .hero {
-  min-height: 100vh;
   min-height: 100svh;
-  padding:
-    max(30px, env(safe-area-inset-top))
-    max(16px, env(safe-area-inset-right))
-    max(30px, env(safe-area-inset-bottom))
-    max(16px, env(safe-area-inset-left));
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 45px 22px;
+  background:
+    radial-gradient(ellipse at 10% 10%, rgba(255,255,255,.7), transparent 32%),
+    radial-gradient(ellipse at 90% 85%, rgba(255,220,229,.65), transparent 34%),
+    linear-gradient(135deg, #fff4f5, #f8dce4 48%, #f4c6d3);
+}
+
+.hero::before,
+.hero::after {
+  content: "✿";
+  position: absolute;
+  color: rgba(142,32,61,.13);
+  font-size: clamp(150px, 28vw, 360px);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero::before {
+  top: -55px;
+  left: -35px;
+  transform: rotate(-22deg);
+}
+
+.hero::after {
+  bottom: -100px;
+  right: -25px;
+  transform: rotate(28deg);
 }
 
 .hero-card {
-  width: 100%;
-  max-width: 760px;
-  min-width: 0;
-  padding: clamp(24px, 5vw, 65px);
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  padding: clamp(30px, 7vw, 76px) clamp(20px, 6vw, 66px);
+  border: 1px solid rgba(142,32,61,.35);
+  outline: 1px solid rgba(142,32,61,.2);
+  outline-offset: 8px;
+  background: rgba(255,250,247,.82);
+  box-shadow: 0 25px 80px rgba(111,30,56,.12);
 }
 
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-size: .72rem;
+  color: var(--berry);
+  font-weight: 600;
+}
+
+.ornament {
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin: 12px 0;
+}
+
+h1, h2, h3, .names {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.intro {
+  margin: 20px auto;
+  max-width: 470px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* Bride and groom photo */
 .couple-photo-wrap {
-  width: clamp(145px, 32vw, 230px);
-  max-width: 100%;
+  width: clamp(160px, 35vw, 230px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 25px;
+  padding: 6px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 8px 25px rgba(142,32,61,.15);
+}
+
+.couple-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid var(--blush);
 }
 
 .names {
-  font-size: clamp(2.7rem, 8vw, 5.7rem);
+  margin: 12px 0;
+  font-size: clamp(3rem, 9vw, 5.7rem);
+  line-height: .95;
+  color: var(--wine);
   overflow-wrap: anywhere;
 }
 
-.names #brideHero,
-.names #groomHero {
-  font-size: clamp(34px, 6vw, 45px) !important;
+.names > span:not(.ampersand) {
+  display: block;
 }
 
-.intro,
-.lead,
-.detail-card p,
-.programme-content p {
-  overflow-wrap: anywhere;
+.ampersand {
+  display: block;
+  color: var(--rose);
+  font-size: .6em;
+  margin: 12px 0;
+  font-style: italic;
 }
 
-/* Responsive scratch circles */
-.scratch-section {
-  width: 100%;
-  max-width: 100%;
-  padding: 28px 8px;
+.hero-date {
+  margin-top: 25px;
+  letter-spacing: .12em;
+  color: var(--wine);
+  font-size: .88rem;
+  font-weight: 500;
 }
 
-.scratch-circles {
-  width: 100%;
-  max-width: 400px;
-  gap: clamp(8px, 3vw, 16px);
-  padding: 0 4px;
+.hero-location {
+  margin: 5px 0 0;
+  font-size: .8rem;
+  color: var(--muted);
 }
 
-.scratch-card {
-  width: clamp(82px, 23vw, 105px);
-  height: clamp(82px, 23vw, 105px);
-  flex: 0 1 105px;
-  min-width: 0;
+.button {
+  display: inline-block;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 25px;
+  background: var(--wine);
+  color: white;
+  text-decoration: none;
+  font: 500 .82rem 'Poppins', sans-serif;
+  letter-spacing: .03em;
+  cursor: pointer;
+  transition: transform .2s, background .2s;
 }
 
-.date-number {
-  font-size: clamp(2.2rem, 8vw, 3.2rem);
+.button:hover {
+  background: var(--berry);
+  transform: translateY(-2px);
 }
 
-.scratch-instruction {
-  font-size: clamp(0.5rem, 2.2vw, 0.65rem);
+.section {
+  padding: 75px 20px;
 }
 
-.scratch-hint {
-  padding: 0 8px;
-  overflow-wrap: anywhere;
+.section-inner {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Programme cards should never push outside the screen */
-.programme-list {
-  width: 100%;
-  max-width: 680px;
+.section-kicker {
+  color: var(--berry);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-size: .7rem;
+  font-weight: 600;
 }
 
-.programme-item {
-  min-width: 0;
+h2 {
+  margin: 8px 0 16px;
+  color: var(--wine);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.1;
 }
 
-.programme-content {
-  min-width: 0;
-  overflow-wrap: anywhere;
+.lead {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: .94rem;
 }
 
-.programme-content h3 {
-  overflow-wrap: anywhere;
+.details {
+  background: var(--blush);
 }
 
-/* Detail cards and countdown */
 .detail-grid {
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
 }
 
 .detail-card {
-  min-width: 0;
+  padding: 28px 18px;
+  background: rgba(255,255,255,.8);
+  border: 1px solid #f1d2db;
+  border-radius: 6px;
+}
+
+.detail-icon {
+  font-size: 1.6rem;
+  color: var(--berry);
+}
+
+.detail-card h3 {
+  color: var(--wine);
+  font-size: 1.7rem;
+  margin: 10px 0 7px;
+}
+
+.detail-card p {
+  color: var(--muted);
+  margin: 4px 0;
+  font-size: .84rem;
+  overflow-wrap: anywhere;
 }
 
 .countdown {
-  flex-wrap: wrap;
-  gap: clamp(12px, 4vw, 30px);
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 34px);
+  margin: 35px auto 0;
 }
 
 .time-unit {
-  min-width: 52px;
+  min-width: 55px;
 }
 
-/* Tablets: iPad and similar screen sizes */
-@media (min-width: 701px) and (max-width: 1024px) {
-  .hero {
-    padding: 40px 28px;
-  }
-
-  .hero-card {
-    max-width: 720px;
-    padding: 48px 36px;
-  }
-
-  .couple-photo-wrap {
-    width: 200px;
-  }
-
-  .names #brideHero,
-  .names #groomHero {
-    font-size: 44px !important;
-  }
-
-  .section {
-    padding: 65px 28px;
-  }
-
-  .detail-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .programme-list {
-    max-width: 650px;
-  }
-
-  .scratch-card {
-    width: 110px;
-    height: 110px;
-    flex-basis: 110px;
-  }
+.time-unit strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: var(--wine);
+  line-height: 1.1;
 }
 
-/* Phones, including iPhone 14 Pro Max */
+.time-unit span {
+  color: var(--muted);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.location {
+  background: linear-gradient(135deg, var(--cream), var(--blush));
+}
+
+.venue-box {
+  max-width: 700px;
+  margin: 32px auto 0;
+  padding: 32px 20px;
+  border-top: 1px solid #e8bdca;
+  border-bottom: 1px solid #e8bdca;
+}
+
+.venue-box h3 {
+  font-size: 2rem;
+  margin: 0 0 6px;
+  color: var(--wine);
+}
+
+.venue-box p {
+  color: var(--muted);
+  margin: 5px 0;
+}
+
+.rsvp {
+  background: var(--wine);
+  color: #fff4f6;
+}
+
+.rsvp h2 {
+  color: #fff4f6;
+}
+
+.rsvp .section-kicker {
+  color: #f4c2d0;
+}
+
+.rsvp .lead {
+  color: #f3d9e0;
+}
+
+.rsvp .button {
+  background: #fff4f6;
+  color: var(--wine);
+}
+
+.rsvp .button:hover {
+  background: white;
+}
+
+footer {
+  padding: 25px 15px;
+  text-align: center;
+  color: var(--muted);
+  font-size: .8rem;
+  background: var(--cream);
+}
+
+.footer-heart {
+  color: var(--berry);
+}
+
 @media (max-width: 700px) {
-  .hero {
-    padding: 28px 18px;
-  }
-
-  .hero-card {
-    padding: 30px 18px;
-    outline-offset: 4px;
-  }
-
-  .eyebrow {
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-  }
-
-  .intro {
-    font-size: 0.85rem;
-    margin: 16px auto;
-  }
-
-  .couple-photo-wrap {
-    width: clamp(145px, 42vw, 190px);
-    margin-bottom: 20px;
-  }
-
-  .names {
-    margin: 10px 0;
-    line-height: 1;
-  }
-
-  .names #brideHero,
-  .names #groomHero {
-    font-size: clamp(32px, 9vw, 42px) !important;
+  .detail-grid {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section {
-    padding: 48px 16px;
-  }
-
-  h2 {
-    font-size: clamp(2rem, 8vw, 2.8rem);
-  }
-
-  .lead {
-    font-size: 0.86rem;
-  }
-
-  .detail-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-    margin-top: 28px;
-  }
-
-  .detail-card {
-    padding: 22px 15px;
-  }
-
-  .countdown {
-    gap: 14px;
-  }
-
-  .time-unit {
-    min-width: 48px;
-  }
-
-  .time-unit strong {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
-  }
-
-  .time-unit span {
-    font-size: 0.6rem;
-  }
-
-  .venue-box {
-    padding: 26px 12px;
-  }
-
-  .venue-box h3 {
-    font-size: 1.65rem;
-    overflow-wrap: anywhere;
-  }
-
-  .button {
-    max-width: 100%;
-    padding: 12px 18px;
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-
-  .programme-list::before {
-    left: 39px;
-  }
-
-  .programme-item {
-    grid-template-columns: 78px minmax(0, 1fr);
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-
-  .programme-date {
-    width: 78px;
-    min-height: 82px;
-    padding: 8px 3px;
-  }
-
-  .programme-date span {
-    font-size: 2rem;
-  }
-
-  .programme-date small {
-    font-size: 0.47rem;
-    letter-spacing: 0;
-    text-align: center;
-  }
-
-  .programme-content {
-    padding: 13px 10px;
-  }
-
-  .programme-content h3 {
-    font-size: 1.4rem;
-  }
-
-  .programme-content p {
-    font-size: 0.73rem;
-  }
-
-  .celebration-box {
-    width: 100%;
-    max-width: 360px;
-    padding: 34px 18px;
-  }
-
-  .celebration-box h2 {
-    font-size: clamp(2rem, 9vw, 2.7rem);
-  }
-}
-
-/* Extra-small phones */
-@media (max-width: 360px) {
-  .hero {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding: 60px 18px;
   }
 
   .hero-card {
-    padding: 26px 13px;
-  }
-
-  .scratch-circles {
-    gap: 7px;
-  }
-
-  .scratch-card {
-    width: 78px;
-    height: 78px;
-    flex-basis: 78px;
-  }
-
-  .date-number {
-    font-size: 2.1rem;
-  }
-
-  .scratch-instruction {
-    font-size: 0.47rem;
-  }
-
-  .programme-item {
-    grid-template-columns: 70px minmax(0, 1fr);
-    gap: 8px;
-  }
-
-  .programme-list::before {
-    left: 34px;
-  }
-
-  .programme-date {
-    width: 70px;
-  }
-
-  .programme-content h3 {
-    font-size: 1.25rem;
+    outline-offset: 5px;
   }
 }
 
-/* Landscape phone screens */
-@media (max-height: 500px) and (orientation: landscape) {
-  .hero {
-    min-height: auto;
-    padding-top: 28px;
-    padding-bottom: 28px;
-  }
-
-  .hero-card {
-    padding: 25px 30px;
-  }
-
-  .couple-photo-wrap {
-    width: 120px;
-  }
-
-  .scratch-section {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-}
-
-/* Respect reduced-motion accessibility settings */
 @media (prefers-reduced-motion: reduce) {
-  .celebration-emoji {
-    animation: none;
+  html {
+    scroll-behavior: auto;
   }
 
-  .confetti-piece {
-    animation-duration: 0.01ms !important;
-  }
-
-  .celebration-box,
-  .celebration-overlay {
+  *, *::before, *::after {
     transition: none !important;
   }
+}
+
+.names #brideHero , .names #groomHero{
+font-size: 45px !important;
+}
+
+/* ==============================
+WEDDING PROGRAMME
+============================== */
+
+.programme {
+background:
+radial-gradient(ellipse at top left, #fff0f3, transparent 55%),
+#fffaf7;
+}
+
+.programme-list {
+position: relative;
+width: min(680px, 100%);
+margin: 42px auto 0;
+text-align: left;
+}
+
+.programme-list::before {
+content: "";
+position: absolute;
+left: 64px;
+top: 30px;
+bottom: 30px;
+width: 1px;
+background: #e5b6c3;
+}
+
+.programme-item {
+position: relative;
+display: grid;
+grid-template-columns: 130px 1fr;
+gap: 22px;
+align-items: stretch;
+margin-bottom: 20px;
+}
+
+.programme-date {
+position: relative;
+z-index: 1;
+align-self: start;
+width: 130px;
+min-height: 100px;
+padding: 14px 8px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: 1px solid #e7c1cb;
+border-radius: 6px;
+background: #fff5f7;
+color: #8e203d;
+}
+
+.programme-date span {
+font-family: "Cormorant Garamond", serif;
+font-size: 2.7rem;
+font-weight: 600;
+line-height: 1;
+}
+
+.programme-date small {
+margin-top: 8px;
+font-family: "Poppins", sans-serif;
+font-size: .63rem;
+letter-spacing: .1em;
+}
+
+.programme-content {
+padding: 17px 20px;
+border: 1px solid #f0dce1;
+border-radius: 6px;
+background: rgba(255, 255, 255, .85);
+box-shadow: 0 8px 22px rgba(142, 32, 61, .05);
+}
+
+.programme-icon {
+color: #b83258;
+font-size: 1.25rem;
+}
+
+.programme-content h3 {
+margin: 3px 0 6px;
+color: #8e203d;
+font-family: "Cormorant Garamond", serif;
+font-size: 1.8rem;
+line-height: 1.15;
+}
+
+.programme-content p {
+margin: 0;
+color: #8a6670;
+font-size: .82rem;
+}
+
+.programme-content .programme-time {
+margin-top: 9px;
+color: #8e203d;
+font-weight: 600;
+}
+
+.programme-wedding .programme-date {
+background: #8e203d;
+color: #fff;
+border-color: #8e203d;
+}
+
+.programme-wedding .programme-content {
+background: #fff0f3;
+border-color: #dba3b3;
+}
+
+@media (max-width: 520px) {
+.programme-list::before {
+left: 47px;
+}
+
+.programme-item {
+grid-template-columns: 94px minmax(0, 1fr);
+gap: 12px;
+}
+
+.programme-date {
+width: 94px;
+min-height: 88px;
+padding: 10px 5px;
+}
+
+.programme-date span {
+font-size: 2.2rem;
+}
+
+.programme-date small {
+font-size: .52rem;
+letter-spacing: .04em;
+}
+
+.programme-content {
+padding: 14px 12px;
+}
+
+.programme-content h3 {
+font-size: 1.5rem;
+}
+
+.programme-content p {
+font-size: .76rem;
+}
+}
+
+/* SCRATCH DATE CIRCLES */
+.scratch-section {
+text-align: center;
+padding: 30px 12px;
+}
+
+.scratch-heading {
+font-family: "Cormorant Garamond", serif;
+font-size: 1.6rem;
+color: #8e203d;
+margin-bottom: 22px;
+}
+
+.scratch-circles {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 14px;
+margin: 0 auto 20px;
+}
+
+.scratch-card {
+position: relative;
+width: 105px;
+height: 105px;
+flex: 0 0 105px;
+border: 3px solid #d8b879;
+border-radius: 50%;
+overflow: hidden;
+background: #fff0f3;
+box-shadow: 0 5px 18px rgba(142, 32, 61, 0.2);
+touch-action: none;
+}
+
+.date-reveal {
+position: absolute;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+background: radial-gradient(circle, #fffaf7, #f5d4df);
+color: #8e203d;
+border-radius: 50%;
+}
+
+.date-number {
+font-family: "Cormorant Garamond", serif;
+font-size: 3.2rem;
+font-weight: 700;
+}
+
+.scratchCanvas {
+position: absolute;
+inset: 0;
+z-index: 2;
+display: block;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+touch-action: none;
+cursor: crosshair;
+}
+
+.scratch-instruction {
+position: absolute;
+inset: 0;
+z-index: 3;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #67223a;
+font-size: 0.65rem;
+font-weight: 600;
+pointer-events: none;
+}
+
+.scratch-card.scratched .scratchCanvas,
+.scratch-card.scratched .scratch-instruction {
+display: none;
+}
+
+.scratch-hint {
+color: #8e203d;
+font-size: 0.9rem;
+}
+
+/* PARTY POPUP */
+.celebration-overlay {
+position: fixed;
+inset: 0;
+z-index: 9999;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+background: rgba(30, 10, 20, 0.72);
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.celebration-overlay.show {
+opacity: 1;
+visibility: visible;
+}
+
+.celebration-box {
+position: relative;
+width: min(100%, 390px);
+padding: 38px 24px;
+border: 2px solid #d8b879;
+border-radius: 24px;
+background: #fff8f6;
+color: #8e203d;
+text-align: center;
+box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+transform: scale(0.65) rotate(-5deg);
+transition: transform 0.5s cubic-bezier(.2, 1.5, .5, 1);
+}
+
+.celebration-overlay.show .celebration-box {
+transform: scale(1) rotate(0);
+}
+
+.celebration-close {
+position: absolute;
+top: 8px;
+right: 14px;
+border: 0;
+background: transparent;
+color: #8e203d;
+font-size: 30px;
+cursor: pointer;
+}
+
+.celebration-emoji {
+font-size: 2.7rem;
+animation: partyBounce 0.8s infinite alternate;
+}
+
+.celebration-small {
+letter-spacing: 3px;
+font-size: 0.75rem;
+}
+
+.celebration-box h2 {
+margin: 12px 0;
+font-family: "Cormorant Garamond", serif;
+font-size: 2.7rem;
+}
+
+.celebration-message {
+line-height: 1.6;
+}
+
+.celebration-button {
+margin-top: 15px;
+padding: 12px 28px;
+border: 0;
+border-radius: 30px;
+background: #8e203d;
+color: white;
+font-size: 1rem;
+cursor: pointer;
+}
+
+/* CONFETTI */
+#confettiContainer {
+position: fixed;
+inset: 0;
+z-index: 10000;
+overflow: hidden;
+pointer-events: none;
+}
+
+.confetti-piece {
+position: absolute;
+top: -20px;
+width: 9px;
+height: 14px;
+border-radius: 2px;
+animation: confettiFall var(--fall-duration, 3s) linear forwards;
+}
+
+@keyframes confettiFall {
+to {
+transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(900deg);
+}
+}
+
+@keyframes partyBounce {
+from { transform: translateY(0) rotate(-8deg); }
+to { transform: translateY(-9px) rotate(8deg); }
+}
+
+@media (max-width: 380px) {
+.scratch-circles { gap: 8px; }
+.scratch-card {
+width: 88px;
+height: 88px;
+flex-basis: 88px;
+}
+.date-number { font-size: 2.6rem; }
+.scratch-instruction { font-size: 0.55rem; }
 }
